@@ -1,3 +1,8 @@
+//Zane Wang
+//
+//
+//
+
 console.log("connected");
 
 var newSlate = document.getElementById("clear");
