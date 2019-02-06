@@ -19,9 +19,6 @@ var growing = true;
 var animated = false;
 
 // button stops the animation on the canvas now
-var stopButton = document.getElementById('stop');
-stopButton.addEventListener('click', stopIt);
-
 var stopIt = function (e) {
     console.log(requestID);
     if (requestID > 0) {
@@ -30,6 +27,9 @@ var stopIt = function (e) {
 	window.cancelAnimationFrame(requestID);
     }
 };
+
+var stopButton = document.getElementById('stop');
+stopButton.addEventListener('click', stopIt);
 
 // draw dot, with origin at center of canvas
 var dot = function (e) {
