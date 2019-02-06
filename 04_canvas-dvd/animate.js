@@ -116,8 +116,9 @@ var dvdLogoSetup = function() {
 	if (rectX + rectWidth/2 == canvas.width) || (rectX + rectWidth/2 == 0) {
 	    xVel *= -1;
 	}
-	if (rectY 
-	
+	if (rectY + rectHeight/2 == canvas.height) || (rectY + rectHeight/2 == 0) {
+	    yVel *= -1;
+	}
 	
 	requestID = window.requestAnimationFrame(dvdLogo);
     };
