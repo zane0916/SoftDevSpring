@@ -1,8 +1,8 @@
 /*
-  team 3Zs - Stefan Tan and Zane Wang
+  team ZJS - Stefan Tan and Zane Wang
   SoftDev2 pd8
-  K03 -- They lock us in the tower whenever we get caught
-  2019-02-04
+  K04 -- What is it saving the screen from?
+  2019-02-06
 */
 
 // instantiate canvas
@@ -47,6 +47,7 @@ var dot = function (e) {
 var drawDot = function (x, y){
     // clears canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    window.cancelAnimationFrame(requestID);
     // drawing an ellipse requires beginPath for the rendering context to
     // know where to start drawing the arc of the ellipse from
     ctx.beginPath();
@@ -69,8 +70,8 @@ var drawDot = function (x, y){
 	if (radius <= 0) {
 	    growing = true;
 	}
-    }	    	
-    
+    }
+
     // end with the fill method to fill the arc with the current fill color
     ctx.fill();
 
@@ -89,13 +90,13 @@ startButton.addEventListener('click', function(e) {
 var clear = function() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 };
-    
+
 // button starts the dvd animation
 var dvdLogoSetup = function() {
     animated = false;
     window.cancelAnimationFrame (requestID);
     clear();
-    
+
     var rectWidth = 100;
     var rectHeight = 50;
 
@@ -109,20 +110,19 @@ var dvdLogoSetup = function() {
     logo.src = "logo_dvd.jpg";
 
     var dvdLogo = function() {
-	rectX = rectX + xVel;
-	rectY = rectY + yVel;
-	ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
+    	rectX = rectX + xVel;
+    	rectY = rectY + yVel;
+    	ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
 
-	if (rectX + rectWidth/2 == canvas.width) || (rectX + rectWidth/2 == 0) {
-	    xVel *= -1;
-	}
-	if (rectY + rectHeight/2 == canvas.height) || (rectY + rectHeight/2 == 0) {
-	    yVel *= -1;
-	}
-	
-	requestID = window.requestAnimationFrame(dvdLogo);
+    	if (rectX + rectWidth == canvas.width || rectX == 0) {
+    	    xVel *= -1;
+    	}
+    	if (rectY + rectHeight == canvas.height || rectY == 0) {
+    	    yVel *= -1;
+    	}
+
+    	requestID = window.requestAnimationFrame(dvdLogo);
     };
-    
     dvdLogo();
 };
 
