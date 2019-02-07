@@ -1,5 +1,5 @@
 /*
-  team ZJS - Stefan Tan and Zane Wang
+  team ZJS - Stefan Tan, Zane Wang and Johnny Wong
   SoftDev2 pd8
   K04 -- What is it saving the screen from?
   2019-02-06
