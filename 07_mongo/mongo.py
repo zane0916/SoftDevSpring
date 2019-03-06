@@ -36,7 +36,7 @@ def find_genre(genre):
 
 def find_movie(title, year):
     movies = []
-    for doc in collection.find({$and: [{"title" : title}, {"year" : year}]}):
+    for doc in collection.find({"$and": [{"title" : title}, {"year" : year}]}):
         ret.append(doc)
     return movies
 
