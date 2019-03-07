@@ -6,9 +6,13 @@
 from pymongo import MongoClient
 SERVER_ADDR='104.248.53.196'
 client = MongoClient(SERVER_ADDR, 27017)
-
 db = client.MOZArella
 collection = db.movies
+
+with open('movies.json') as f:
+    lines = f.read()
+    data = json.loads(lines)
+    collection.insert_many(data)
 
 '''
 The dataset that we used was the wikipedia collection of movies. It is called 
@@ -28,11 +32,13 @@ def find_year(num):
         ret.append(doc)
     return movies
 
+'''
 def find_genre(genre):
     movies = []
     for doc in collection.find({"genres" : "genres"["genres".find(genre)]}):
         ret.append(doc)
     return movie
+'''
 
 def find_movie(title, year):
     movies = []
@@ -40,13 +46,15 @@ def find_movie(title, year):
         ret.append(doc)
     return movies
 
+'''
 def find_cast(person):
     movies = []
     for doc in collection.find({"cast" : "cast"["cast".find(person)]}):
         ret.append(doc)
     return movies
+'''
 
 print(find_year(1900))
 print(find_movie("After Dark in Central Park", 1900))
-print(find_cast("Dwayne Johnson"))
-print(find_genre("action"))
+#print(find_cast("Dwayne Johnson"))
+#print(find_genre("action"))
