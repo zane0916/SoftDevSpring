@@ -16,8 +16,8 @@ var dot = function(e) {
     c.setAttribute("r", "10");
     c.setAttribute("fill", "purple");
     c.setAttribute("stroke","black");
-
     slate.appendChild(c);
+    c.addEventListener("click", modify);
 }
 
 
@@ -41,7 +41,6 @@ var wipe = function(e) {
 
 //adds functionality to the html
 slate.addEventListener("click", dot);
-slate.children.addEventListener("click", modify);
 clear.addEventListener("click", wipe);
 
 
