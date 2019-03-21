@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.chart rect {
+  fill: steelblue;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+</style>
+<svg class="chart"></svg>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="../13_svg/index.js"></script>
+
+<!-- 
+.selectAll selects a group for a new selection
+.select preserves grouping structure, replaces missing slots with null
+.select propagates data from parent to child
+.datum used to manipulate the data in a selection
+.data binds the selection to a data set, defines data-per-group 
+update returns matching for a initial datum
+exit returns the non-matching for an initial datum
+enter returns the pieces not found in the initial datum
+-->
