@@ -1,0 +1,4 @@
+def union(list1, list2):
+    return [x if x <= y else y for x in list1 for y in list2]
+
+print(union[1,2,3][2,3,4])
