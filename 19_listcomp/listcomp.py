@@ -25,5 +25,3 @@ def cartesian(list1, list2):
 
 print(cartesian([1,2],["red","blue"]))
 
-
-    
